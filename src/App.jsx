@@ -1,16 +1,19 @@
 import "./App.css";
 import linkedIn from "./assets/linked.png";
 import headshot from "./assets/headshot.jpg";
+
 import ProjectSection from "./components/ProjectSection";
+import SkillsSection from "./components/SkillsSection";
 
 import { useState } from "react";
 
 function App() {
-  const [activeTab, setActiveTab] = useState("Projects");
+  const [activeTab, setActiveTab] = useState("Experience");
   console.log(activeTab);
 
   const subNavContent = {
-    Projects: <ProjectSection />,
+    Experience: <ProjectSection />,
+    Skills: <SkillsSection />,
   };
   const socials = [
     {
@@ -19,11 +22,11 @@ function App() {
       link: "https://www.linkedin.com/in/ameyakul/",
       img: linkedIn,
     },
-    { id: 2, externalSource: "", link: "", img: "" },
-    { id: 3, externalSource: "", link: "", img: "" },
+    // { id: 2, externalSource: "", link: "", img: "" },
+    // { id: 3, externalSource: "", link: "", img: "" },
   ]; // TODO: change for CMS object parsing
 
-  const subNav = ["Projects", "Research", "Skills", "Experience", "Connect"]; // TODO: Change for CMS
+  const subNav = ["Experience", "Skills", "Education", "Connect"];
 
   return (
     <>
@@ -58,7 +61,7 @@ function App() {
           {subNav.map((item) => (
             <div
               key={item}
-              className={`subNavTitles ${activeTab === item ? "activePill" : ""}`}
+              className={`subNavTitles ${activeTab === item ? "activePill" : ""}`} // string literals to dynamically apply multiple css classes
               onClick={() => setActiveTab(item)}
             >
               {item}

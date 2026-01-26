@@ -4,6 +4,8 @@ import satellite from "../assets/satellite.png";
 import uci from "../assets/uci.jpg";
 import sarpVid from "../assets/sarpVideo.MOV";
 import irvinePicture from "../assets/irvine.png";
+import nrg from "../assets/NRG.jpg";
+
 const ProjectSection = () => {
   const projects = [
     {
@@ -22,7 +24,7 @@ const ProjectSection = () => {
         "Engineered CubeSat frame components with custom hinge mechanisms. Conducted FEA simulations improving structural stability by 4.5% and thermal analysis for spacecraft subsystems.",
       externalLink: "https://huskysat.org/",
       icon: satellite,
-      media: ,
+      media: "",
     },
     {
       id: 3,
@@ -32,6 +34,15 @@ const ProjectSection = () => {
       externalLink: "https://www.ucigati.org/",
       icon: uci,
       media: irvinePicture,
+    },
+    {
+      id: 4,
+      projectName: "Electrohydrodynamic Flow Control Research",
+      projectDescription:
+        "Assisted graduate researchers studying electrode configurations' effects on boundary layer behavior and thrust generation. Operated wind tunnels, collected velocity and pressure data using pitot tubes, and processed results with Python and MATLAB.",
+      externalLink: "https://depts.washington.edu/nrglab/",
+      icon: nrg,
+      media: "",
     },
   ];
 
