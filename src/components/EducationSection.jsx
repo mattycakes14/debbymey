@@ -21,17 +21,29 @@ const EducationSection = () => {
     ],
     activities: [
       { name: "Theta Tau", description: "Professional Engineering Fraternity" },
-      { name: "NRG Research Group", description: "Undergraduate Research Member" },
-      { name: "UW Badminton Team", description: "6th place, 2025 National Collegiate Championships" },
-      { name: "Hiller Aviation Museum", description: "Volunteer - flight simulators, guided tours" },
-      { name: "Communication Academy", description: "Part-time speech therapy instructor" },
+      {
+        name: "NRG Research Group",
+        description: "Undergraduate Research Member",
+      },
+      {
+        name: "UW Badminton Team",
+        description: "6th place, 2025 National Collegiate Championships",
+      },
+      {
+        name: "Hiller Aviation Museum",
+        description: "Volunteer - flight simulators, guided tours",
+      },
+      {
+        name: "Communication Academy",
+        description: "Part-time speech therapy instructor",
+      },
     ],
   };
 
   return (
     <div className="educationContainer">
-      <div className="educationUniversity">
-        <div className="universityName">{education.university.name}</div>
+      <div className="educationSection">
+        <div className="sectionTitle">{education.university.name}</div>
         <div className="universityDegree">{education.university.degree}</div>
         <div className="universityDetails">
           <span>{education.university.graduation}</span>
@@ -40,7 +52,7 @@ const EducationSection = () => {
         </div>
       </div>
 
-      <div className="educationCoursework">
+      <div className="educationSection">
         <div className="sectionTitle">Relevant Coursework</div>
         <div className="courseworkItems">
           {education.coursework.map((course) => (
@@ -51,7 +63,7 @@ const EducationSection = () => {
         </div>
       </div>
 
-      <div className="educationActivities">
+      <div className="educationSection">
         <div className="sectionTitle">Activities</div>
         {education.activities.map((activity) => (
           <div className="activityRow" key={activity.name}>

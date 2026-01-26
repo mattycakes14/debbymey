@@ -4,6 +4,7 @@ import headshot from "./assets/headshot.jpg";
 
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
+import EducationSection from "./components/EducationSection";
 
 import { useState } from "react";
 
@@ -14,6 +15,7 @@ function App() {
   const subNavContent = {
     Experience: <ProjectSection />,
     Skills: <SkillsSection />,
+    Education: <EducationSection />,
   };
   const socials = [
     {

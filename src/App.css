@@ -167,3 +167,65 @@ h1 {
 .skillRow {
   margin-bottom: 20px;
 }
+
+/* Education Section Styles */
+.educationContainer {
+  margin-top: 40px;
+}
+.educationSection {
+  margin-top: 40px;
+  height: fit-content;
+  border-bottom: 1px solid black;
+}
+
+.educationSection div {
+  margin-bottom: 25px;
+}
+.sectionTitle {
+  font-family: "Outfit";
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.universityDegree {
+  font-family: "Outfit";
+  font-size: 18px;
+}
+
+.universityDetails {
+  font-family: "Outfit";
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 8px;
+  display: flex;
+  gap: 20px;
+}
+
+.courseworkItems {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.courseworkTag {
+  font-family: "Outfit";
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.activityRow {
+  font-family: "Outfit";
+  margin-top: 10px;
+}
+
+.activityName {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.activityDescription {
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: 10px;
+}
