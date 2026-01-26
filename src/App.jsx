@@ -5,6 +5,7 @@ import headshot from "./assets/headshot.jpg";
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import EducationSection from "./components/EducationSection";
+import ConnectSection from "./components/ConnectSection";
 
 import { useState } from "react";
 
@@ -16,6 +17,7 @@ function App() {
     Experience: <ProjectSection />,
     Skills: <SkillsSection />,
     Education: <EducationSection />,
+    Connect: <ConnectSection />,
   };
   const socials = [
     {

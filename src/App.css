@@ -229,3 +229,29 @@ h1 {
   font-weight: 400;
   margin-left: 10px;
 }
+
+/* Connect Tab Styles*/
+.connectOuterContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.connectContainer {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.connectContainer img {
+  width: 20px;
+  padding-right: 8px;
+}
+
+.connectName {
+  font-family: "Outfit";
+  font-size: 17px;
+  font-weight: 500;
+  color: black;
+}
