@@ -2,7 +2,8 @@ import ProjectSectionTab from "./ProjectSectionTab";
 import sarp from "../assets/sarp.jpg";
 import satellite from "../assets/satellite.png";
 import uci from "../assets/uci.jpg";
-
+import sarpVid from "../assets/sarpVideo.MOV";
+import irvinePicture from "../assets/irvine.png";
 const ProjectSection = () => {
   const projects = [
     {
@@ -11,7 +12,8 @@ const ProjectSection = () => {
       projectDescription:
         "Designed bulkheads and internal spars for liquid rocket propulsion system. Developed Python-based bearing failure calculator integrating tensile, shear, and bolt shear models.",
       externalLink: "https://sarpuw.com/",
-      image: sarp,
+      icon: sarp,
+      media: sarpVid,
     },
     {
       id: 2,
@@ -19,7 +21,8 @@ const ProjectSection = () => {
       projectDescription:
         "Engineered CubeSat frame components with custom hinge mechanisms. Conducted FEA simulations improving structural stability by 4.5% and thermal analysis for spacecraft subsystems.",
       externalLink: "https://huskysat.org/",
-      image: satellite,
+      icon: satellite,
+      media: "",
     },
     {
       id: 3,
@@ -27,7 +30,8 @@ const ProjectSection = () => {
       projectDescription:
         "Researched rotor geometry effects on aircraft noise. Designed airfoils in SolidWorks, ran CFD simulations, and conducted wind tunnel tests measuring sound pressure levels across blade configurations.",
       externalLink: "https://www.ucigati.org/",
-      image: uci,
+      icon: uci,
+      media: irvinePicture,
     },
   ];
 
@@ -38,7 +42,8 @@ const ProjectSection = () => {
           name={project.projectName}
           desc={project.projectDescription}
           link={project.externalLink}
-          image={project.image}
+          icon={project.icon}
+          media={project.media}
         />
       ))}
     </div>

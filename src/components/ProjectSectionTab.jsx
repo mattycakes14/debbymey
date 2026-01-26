@@ -1,10 +1,12 @@
 import "../App.css";
 
-const ProjectSectionTab = ({ name, desc, link, image }) => {
+const ProjectSectionTab = ({ name, desc, link, icon, media }) => {
+  const isVideo = media && /\.(mp4|mov|webm|ogg)$/i.test(media);
+
   return (
     <div className="projectSectionTab">
       <div className="projectContentContainer">
-        <img src={image} alt="small image" className="projectImage"></img>
+        <img src={icon} alt="small image" className="projectImage"></img>
         <div className="projectName">{name}</div>
         <div className="projectDesc">{desc}</div>
 
@@ -13,7 +15,13 @@ const ProjectSectionTab = ({ name, desc, link, image }) => {
         </a>
       </div>
       <div className="projectImageContainer">
-        <img alt="project image"></img>
+        {isVideo ? (
+          <video className="projectVideoMedia" autoPlay muted loop playsInline>
+            <source src={media} type="video/mp4" />
+          </video>
+        ) : (
+          <img src={media} alt="project media" className="projectPhotoMedia" />
+        )}
       </div>
     </div>
   );
