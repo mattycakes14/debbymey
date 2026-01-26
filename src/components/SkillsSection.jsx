@@ -9,46 +9,29 @@ import {
 } from "react-icons/si";
 import { FaJava, FaCubes, FaChartLine } from "react-icons/fa";
 import { TbMathFunction } from "react-icons/tb";
+import { skills } from "../data/resume";
+
+// Icon mapping - React components can't be stored in data files
+const iconMap = {
+  SolidWorks: <SiDassaultsystemes />,
+  AutoCAD: <SiAutodesk />,
+  Onshape: <FaCubes />,
+  Revit: <SiAutodesk />,
+  Ansys: <FaCubes />,
+  "Fluid x3D": <FaCubes />,
+  MATLAB: <TbMathFunction />,
+  Python: <SiPython />,
+  Java: <FaJava />,
+  Arduino: <SiArduino />,
+  HTML: <SiHtml5 />,
+  "Random Forest": <FaChartLine />,
+  XGBoost: <FaChartLine />,
+  "Logistic Regression": <FaChartLine />,
+  "Django REST": <SiDjango />,
+  Julia: <SiJulia />,
+};
 
 const SkillsSection = () => {
-  const skills = [
-    {
-      category: "CAD",
-      items: [
-        { name: "SolidWorks", icon: <SiDassaultsystemes /> },
-        { name: "AutoCAD", icon: <SiAutodesk /> },
-        { name: "Onshape", icon: <FaCubes /> },
-        { name: "Revit", icon: <SiAutodesk /> },
-      ],
-    },
-    {
-      category: "Simulation",
-      items: [
-        { name: "Ansys", icon: <FaCubes /> },
-        { name: "Fluid x3D", icon: <FaCubes /> },
-        { name: "MATLAB", icon: <TbMathFunction /> },
-      ],
-    },
-    {
-      category: "Programming",
-      items: [
-        { name: "Python", icon: <SiPython /> },
-        { name: "Java", icon: <FaJava /> },
-        { name: "Arduino", icon: <SiArduino /> },
-        { name: "HTML", icon: <SiHtml5 /> },
-      ],
-    },
-    {
-      category: "ML/Data",
-      items: [
-        { name: "Random Forest", icon: <FaChartLine /> },
-        { name: "XGBoost", icon: <FaChartLine /> },
-        { name: "Logistic Regression", icon: <FaChartLine /> },
-        { name: "Django REST", icon: <SiDjango /> },
-        { name: "Julia", icon: <SiJulia /> },
-      ],
-    },
-  ];
 
   return (
     <div className="skillsContainer">
@@ -57,8 +40,8 @@ const SkillsSection = () => {
           <div className="skillCategory">{skill.category}</div>
           <div className="skillItems">
             {skill.items.map((item) => (
-              <span className="skillTag" key={item.name}>
-                {item.icon} {item.name}
+              <span className="skillTag" key={item}>
+                {iconMap[item]} {item}
               </span>
             ))}
           </div>

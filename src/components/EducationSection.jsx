@@ -1,44 +1,6 @@
+import { education } from "../data/resume";
+
 const EducationSection = () => {
-  const education = {
-    university: {
-      name: "University of Washington, College of Engineering",
-      degree: "Bachelor of Science: Mechanical Engineering",
-      graduation: "Expected June 2027",
-      gpa: "3.8/4.0",
-      blurb: "Dean's List x3",
-    },
-    coursework: [
-      "Mechanics of Materials",
-      "Kinematics and Dynamics",
-      "Differential Equations",
-      "Linear Algebra",
-      "Scientific Computing",
-      "Calculus",
-      "Physics",
-      "General Chemistry",
-      "Introduction to R",
-      "Java",
-    ],
-    activities: [
-      { name: "Theta Tau", description: "Professional Engineering Fraternity" },
-      {
-        name: "NRG Research Group",
-        description: "Undergraduate Research Member",
-      },
-      {
-        name: "UW Badminton Team",
-        description: "6th place, 2025 National Collegiate Championships",
-      },
-      {
-        name: "Hiller Aviation Museum",
-        description: "Volunteer - flight simulators, guided tours",
-      },
-      {
-        name: "Communication Academy",
-        description: "Part-time speech therapy instructor",
-      },
-    ],
-  };
 
   return (
     <div className="educationContainer">
