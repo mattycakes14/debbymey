@@ -22,7 +22,7 @@ const ProjectSection = () => {
         "Engineered CubeSat frame components with custom hinge mechanisms. Conducted FEA simulations improving structural stability by 4.5% and thermal analysis for spacecraft subsystems.",
       externalLink: "https://huskysat.org/",
       icon: satellite,
-      media: "",
+      media: ,
     },
     {
       id: 3,
