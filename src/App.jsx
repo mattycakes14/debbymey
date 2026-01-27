@@ -1,17 +1,45 @@
 import "./App.css";
-import linkedIn from "./assets/linked.png";
 import headshot from "./assets/headshot.jpg";
+import linkedIn from "./assets/linked.png";
 
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import EducationSection from "./components/EducationSection";
 import ConnectSection from "./components/ConnectSection";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { client, urlFor } from "./sanityClient";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Experience");
-  console.log(activeTab);
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "profile"][0]{ name, heading, description, headshot, socials }`)
+      .then((data) => setProfile(data))
+      .catch(console.error);
+  }, []);
+
+  const heading = profile?.heading || "Hey, I'm Ameya Kulkarni.";
+  const description =
+    profile?.description ||
+    "I'm a Mechanical Engineering student, rocket enthusiast, and research assistant. I spend most of my time designing structures that won't fail under pressure.";
+  const headshotSrc = profile?.headshot ? urlFor(profile.headshot).url() : headshot;
+
+  const defaultSocials = [
+    { id: 1, externalSource: "LinkedIn", link: "https://www.linkedin.com/in/ameyakul/", img: linkedIn },
+  ];
+  const socials = profile?.socials?.length
+    ? profile.socials.map((s, i) => ({
+        id: i,
+        externalSource: s.platform,
+        link: s.link,
+        img: s.icon ? urlFor(s.icon).url() : "",
+      }))
+    : defaultSocials;
+
+  const subNav = ["Experience", "Skills", "Education", "Connect"];
 
   const subNavContent = {
     Experience: <ProjectSection />,
@@ -19,18 +47,6 @@ function App() {
     Education: <EducationSection />,
     Connect: <ConnectSection />,
   };
-  const socials = [
-    {
-      id: 1,
-      externalSource: "LinkedIn",
-      link: "https://www.linkedin.com/in/ameyakul/",
-      img: linkedIn,
-    },
-    // { id: 2, externalSource: "", link: "", img: "" },
-    // { id: 3, externalSource: "", link: "", img: "" },
-  ]; // TODO: change for CMS object parsing
-
-  const subNav = ["Experience", "Skills", "Education", "Connect"];
 
   return (
     <>
@@ -38,17 +54,13 @@ function App() {
         <img
           className="headShotImage"
           alt="Ameya headshot"
-          src={headshot}
+          src={headshotSrc}
         ></img>
         <div className="introHeader">
-          <h1>Hey, I'm Ameya Kulkarni.</h1>
+          <h1>{heading}</h1>
         </div>
         <div className="introDescription">
-          <p>
-            I'm a Mechanical Engineering student, rocket enthusiast, and
-            research assistant. I spend most of my time designing structures
-            that won't fail under pressure.
-          </p>
+          <p>{description}</p>
         </div>
         <div className="socialsContainer">
           {socials.map((item) => (
@@ -65,7 +77,7 @@ function App() {
           {subNav.map((item) => (
             <div
               key={item}
-              className={`subNavTitles ${activeTab === item ? "activePill" : ""}`} // string literals to dynamically apply multiple css classes
+              className={`subNavTitles ${activeTab === item ? "activePill" : ""}`}
               onClick={() => setActiveTab(item)}
             >
               {item}

@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   SiDassaultsystemes,
   SiAutodesk,
@@ -9,7 +10,8 @@ import {
 } from "react-icons/si";
 import { FaJava, FaCubes, FaChartLine } from "react-icons/fa";
 import { TbMathFunction } from "react-icons/tb";
-import { skills } from "../data/resume";
+import { skills as defaultSkills } from "../data/resume";
+import { client } from "../sanityClient";
 
 // Icon mapping - React components can't be stored in data files
 const iconMap = {
@@ -32,6 +34,18 @@ const iconMap = {
 };
 
 const SkillsSection = () => {
+  const [skills, setSkills] = useState(defaultSkills);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "skill"] | order(order asc){ category, items }`)
+      .then((data) => {
+        if (data?.length) {
+          setSkills(data);
+        }
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="skillsContainer">

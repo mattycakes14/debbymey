@@ -1,6 +1,32 @@
-import { education } from "../data/resume";
+import { useState, useEffect } from "react";
+import { education as defaultEducation } from "../data/resume";
+import { client } from "../sanityClient";
 
 const EducationSection = () => {
+  const [education, setEducation] = useState(defaultEducation);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "education"][0]{ universityName, degree, graduation, gpa, blurb, coursework, activities }`)
+      .then((data) => {
+        if (data) {
+          setEducation({
+            university: {
+              name: data.universityName || defaultEducation.university.name,
+              degree: data.degree || defaultEducation.university.degree,
+              graduation: data.graduation || defaultEducation.university.graduation,
+              gpa: data.gpa || defaultEducation.university.gpa,
+              blurb: data.blurb || defaultEducation.university.blurb,
+            },
+            coursework: data.coursework?.length ? data.coursework : defaultEducation.coursework,
+            activities: data.activities?.length
+              ? data.activities.map((a) => ({ name: a.name, description: a.description }))
+              : defaultEducation.activities,
+          });
+        }
+      })
+      .catch(console.error);
+  }, []);
 
   return (
     <div className="educationContainer">
