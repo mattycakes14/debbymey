@@ -1,3 +1,36 @@
+/* CSS Variables */
+:root {
+  /* Colors */
+  --color-primary: black;
+  --color-muted: #747272;
+  --color-bg: white;
+
+  /* Typography */
+  --font-primary: "Outfit", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Font Sizes */
+  --text-sm: 0.875rem;
+  --text-base: 0.9375rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5625rem;
+
+  /* Spacing */
+  --space-xs: 0.3125rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.625rem;
+  --space-lg: 0.9375rem;
+  --space-xl: 1.25rem;
+  --space-2xl: 1.875rem;
+  --space-3xl: 2.5rem;
+  --space-4xl: 3.125rem;
+  --space-5xl: 5rem;
+}
+
 /* Top Content Styles*/
 .mainContainer {
   max-width: 700px;
@@ -8,7 +41,7 @@
 }
 
 .headShotImage {
-  margin-top: 3.75rem;
+  margin-top: var(--space-3xl);
   width: 100px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -22,24 +55,24 @@
   width: 75%;
 }
 .socialsContainer {
-  margin-top: 2.1875rem;
+  margin-top: var(--space-2xl);
 }
 
 .externalSourceImage {
   width: 20px;
   height: 20px;
-  margin-right: 0.9375rem;
+  margin-right: var(--space-lg);
 }
 
 .subNav {
   display: flex;
-  margin-top: 5rem;
+  margin-top: var(--space-5xl);
 }
 
 .subNavTitles {
-  font-family: "Outfit", sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
   cursor: pointer;
   width: 80px;
   height: 30px;
@@ -49,55 +82,55 @@
 }
 
 .subTabContainer {
-  margin-top: 3.125rem;
+  margin-top: var(--space-4xl);
 }
 
 .activePill {
-  background-color: black;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
   border-radius: 15px;
 }
 
 h1 {
-  font-family: "Outfit", sans-serif;
-  font-weight: 700;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
 }
 
 .introDescription p {
   width: 75%;
-  font-family: "Outfit", sans-serif;
-  color: #747272;
+  font-family: var(--font-primary);
+  color: var(--color-muted);
 }
 
 /* Project Tab Styles */
 .projectSectionTab {
   width: 100%;
   min-height: 300px;
-  margin-bottom: 2.1875rem;
+  margin-bottom: var(--space-2xl);
   border-radius: 10px;
   box-shadow: 0px 2px 10px 0px black; /* offset-x offset-y blur spread color*/
   display: flex;
 }
 
 .projectContentContainer {
-  margin: 1.875rem;
+  margin: var(--space-2xl);
   width: 100%;
   max-width: 350px;
 }
 
 .projectName {
-  margin-top: 30px;
-  font-family: "Outfit", sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
+  margin-top: var(--space-2xl);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-xl);
 }
 
 .projectDesc {
-  margin-top: 30px;
-  font-family: "Outfit", sans-serif;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  color: #747272;
+  margin-top: var(--space-2xl);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-base);
+  color: var(--color-muted);
 }
 
 .projectLink {
@@ -106,13 +139,13 @@ h1 {
 }
 
 .visitLinkText {
-  margin-top: 30px;
-  font-family: "Outfit", sans-serif;
-  font-weight: 700;
-  font-size: 0.875rem;
+  margin-top: var(--space-2xl);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
   width: 65px;
   height: 25px;
-  border: 2px solid black;
+  border: 2px solid var(--color-primary);
   border-radius: 20px;
   display: flex;
   justify-content: center;
@@ -148,100 +181,100 @@ h1 {
 
 /* Skills Section Tab*/
 .skillCategory {
-  font-family: "Outfit";
-  font-weight: 700;
-  font-size: 1.0625rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-md);
 }
 
 .skillTag {
-  font-family: "Outfit";
-  font-weight: 400;
-  font-size: 0.9375rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--text-base);
   display: inline-flex;
   align-items: center;
   gap: 4px;
 }
 
 .skillItems {
-  padding-left: 5px;
+  padding-left: var(--space-xs);
 }
 
 .skillItems span {
-  padding-right: 8px;
+  padding-right: var(--space-sm);
 }
 
 .skillRow {
-  margin-bottom: 20px;
+  margin-bottom: var(--space-xl);
 }
 
 /* Education Section Styles */
 .educationContainer {
-  margin-top: 40px;
+  margin-top: var(--space-3xl);
 }
 .educationSection {
-  margin-top: 40px;
+  margin-top: var(--space-3xl);
   height: fit-content;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-primary);
 }
 
 .educationSection div {
-  margin-bottom: 25px;
+  margin-bottom: var(--space-2xl);
 }
 .sectionTitle {
-  font-family: "Outfit";
-  font-size: 1.5625rem;
-  font-weight: 500;
+  font-family: var(--font-primary);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-medium);
 }
 
 .universityDegree {
-  font-family: "Outfit";
-  font-size: 1.125rem;
+  font-family: var(--font-primary);
+  font-size: var(--text-lg);
 }
 
 .universityDetails {
-  font-family: "Outfit";
-  font-size: 0.9375rem;
-  font-weight: 400;
-  margin-top: 8px;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  margin-top: var(--space-sm);
   display: flex;
-  gap: 20px;
+  gap: var(--space-xl);
 }
 
 .courseworkItems {
-  margin-top: 10px;
+  margin-top: var(--space-md);
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .courseworkTag {
-  font-family: "Outfit";
-  font-size: 0.9375rem;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
 }
 
 .activityRow {
-  font-family: "Outfit";
-  margin-top: 10px;
+  font-family: var(--font-primary);
+  margin-top: var(--space-md);
 }
 
 .activityName {
-  font-size: 1.0625rem;
-  font-weight: 500;
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-medium);
 }
 
 .activityDescription {
-  font-size: 0.9375rem;
-  font-weight: 400;
-  margin-left: 10px;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  margin-left: var(--space-md);
 }
 
 /* Connect Tab Styles*/
 .connectOuterContainer {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 40px;
+  gap: var(--space-lg);
+  margin-top: var(--space-3xl);
 }
 
 .connectContainer {
@@ -252,12 +285,12 @@ h1 {
 
 .connectContainer img {
   width: 20px;
-  padding-right: 8px;
+  padding-right: var(--space-sm);
 }
 
 .connectName {
-  font-family: "Outfit";
-  font-size: 1.0625rem;
-  font-weight: 500;
-  color: black;
+  font-family: var(--font-primary);
+  font-size: var(--text-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
 }
