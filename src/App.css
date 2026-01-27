@@ -294,3 +294,106 @@ h1 {
   font-weight: var(--font-weight-medium);
   color: var(--color-primary);
 }
+
+/* ==========================================
+   MEDIA QUERIES - Mobile Responsiveness
+   ========================================== */
+
+/* Tablet and below (768px) */
+@media (max-width: 768px) {
+  .mainContainer {
+    width: 95%;
+    padding: 0 0.75rem;
+  }
+
+  .introHeader,
+  .introDescription p {
+    width: 100%;
+  }
+
+  .subNav {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-3xl);
+  }
+
+  .projectSectionTab {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .projectContentContainer {
+    max-width: 100%;
+  }
+
+  .projectImageContainer {
+    padding: var(--space-2xl);
+  }
+
+  .projectVideoMedia {
+    max-width: 100%;
+  }
+
+  .projectPhotoMedia {
+    max-width: 150px;
+  }
+
+  .universityDetails {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .headShotImage {
+    width: 80px;
+    margin-top: var(--space-2xl);
+  }
+
+  .subNav {
+    margin-top: var(--space-2xl);
+  }
+
+  .subNavTitles {
+    width: 70px;
+    font-size: 0.75rem;
+  }
+
+  .subTabContainer {
+    margin-top: var(--space-2xl);
+  }
+
+  .projectContentContainer {
+    margin: var(--space-xl);
+  }
+
+  .projectName {
+    margin-top: var(--space-xl);
+    font-size: var(--text-lg);
+  }
+
+  .projectDesc {
+    margin-top: var(--space-xl);
+  }
+
+  .visitLinkText {
+    margin-top: var(--space-xl);
+  }
+
+  .sectionTitle {
+    font-size: var(--text-xl);
+  }
+
+  .educationSection {
+    margin-top: var(--space-2xl);
+  }
+
+  .educationContainer {
+    margin-top: var(--space-2xl);
+  }
+
+  .connectOuterContainer {
+    margin-top: var(--space-2xl);
+  }
+}
