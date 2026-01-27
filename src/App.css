@@ -1,9 +1,10 @@
 /* Top Content Styles*/
 .mainContainer {
-  margin-left: 250px;
-  margin-right: 250px;
-  width: 700px;
-  height: 1500px;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  min-height: 100vh;
 }
 
 .headShotImage {
@@ -38,7 +39,7 @@
 .subNavTitles {
   font-family: "Outfit", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
   cursor: pointer;
   width: 80px;
   height: 30px;
@@ -46,9 +47,11 @@
   align-items: center;
   justify-content: center;
 }
+
 .subTabContainer {
   margin-top: 50px;
 }
+
 .activePill {
   background-color: black;
   color: white;
@@ -69,7 +72,7 @@ h1 {
 /* Project Tab Styles */
 .projectSectionTab {
   width: 100%;
-  height: 300px;
+  min-height: 300px;
   margin-bottom: 35px;
   border-radius: 10px;
   box-shadow: 0px 2px 10px 0px black; /* offset-x offset-y blur spread color*/
@@ -78,21 +81,22 @@ h1 {
 
 .projectContentContainer {
   margin: 30px;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
 }
 
 .projectName {
   margin-top: 30px;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .projectDesc {
   margin-top: 30px;
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: #747272;
 }
 
@@ -105,7 +109,7 @@ h1 {
   margin-top: 30px;
   font-family: "Outfit", sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 0.875rem;
   width: 65px;
   height: 25px;
   border: 2px solid black;
@@ -126,15 +130,17 @@ h1 {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: top;
+  box-shadow: 0px 1px 3px 0px black;
 }
 
 .projectVideoMedia {
-  width: 320px;
-  height: 230px;
+  max-width: 320px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
 }
 
 .projectPhotoMedia {
-  width: 200px;
+  max-width: 200px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: top;
@@ -144,13 +150,13 @@ h1 {
 .skillCategory {
   font-family: "Outfit";
   font-weight: 700;
-  font-size: 17px;
+  font-size: 1.0625rem;
 }
 
 .skillTag {
   font-family: "Outfit";
   font-weight: 400;
-  font-size: 15px;
+  font-size: 0.9375rem;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -183,18 +189,18 @@ h1 {
 }
 .sectionTitle {
   font-family: "Outfit";
-  font-size: 25px;
+  font-size: 1.5625rem;
   font-weight: 500;
 }
 
 .universityDegree {
   font-family: "Outfit";
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .universityDetails {
   font-family: "Outfit";
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
   margin-top: 8px;
   display: flex;
@@ -210,7 +216,7 @@ h1 {
 
 .courseworkTag {
   font-family: "Outfit";
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
 }
 
@@ -220,12 +226,12 @@ h1 {
 }
 
 .activityName {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 500;
 }
 
 .activityDescription {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 400;
   margin-left: 10px;
 }
@@ -251,7 +257,7 @@ h1 {
 
 .connectName {
   font-family: "Outfit";
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 500;
   color: black;
 }
