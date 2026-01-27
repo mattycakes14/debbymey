@@ -2,9 +2,8 @@ import ProjectSectionTab from "./ProjectSectionTab";
 import { experiences } from "../data/resume";
 
 const ProjectSection = () => {
-
   return (
-    <div>
+    <div className="projectContainer">
       {experiences.map((exp) => (
         <ProjectSectionTab
           key={exp.id}

@@ -31,6 +31,18 @@
   --space-5xl: 5rem;
 }
 
+/* Page Load Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Top Content Styles*/
 .mainContainer {
   max-width: 700px;
@@ -41,7 +53,9 @@
 }
 
 .headShotImage {
+  animation: fadeInUp 0.6s ease forwards;
   margin-top: var(--space-3xl);
+  margin-bottom: var(--space-xl);
   width: 100px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -53,20 +67,31 @@
 
 .introHeader {
   width: 75%;
+  animation: fadeInUp 0.6s ease 0.1s forwards;
+  opacity: 0;
 }
 .socialsContainer {
   margin-top: var(--space-2xl);
+  animation: fadeInUp 0.6s ease 0.3s forwards;
+  opacity: 0;
 }
 
 .externalSourceImage {
   width: 20px;
   height: 20px;
   margin-right: var(--space-lg);
+  transition: transform 0.3s ease;
+}
+
+.externalSourceImage:hover {
+  transform: translateY(-5px);
 }
 
 .subNav {
   display: flex;
   margin-top: var(--space-5xl);
+  animation: fadeInUp 0.6s ease 0.4s forwards;
+  opacity: 0;
 }
 
 .subNavTitles {
@@ -79,10 +104,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.subNavTitles:hover {
+  transform: translateY(-5px);
 }
 
 .subTabContainer {
   margin-top: var(--space-4xl);
+  animation: fadeInUp 0.6s ease 0.5s forwards;
+  opacity: 0;
 }
 
 .activePill {
@@ -100,9 +132,14 @@ h1 {
   width: 75%;
   font-family: var(--font-primary);
   color: var(--color-muted);
+  animation: fadeInUp 0.6s ease 0.2s forwards;
+  opacity: 0;
 }
 
 /* Project Tab Styles */
+.projectContainer {
+  animation: fadeInUp ease 0.3s forwards;
+}
 .projectSectionTab {
   width: 100%;
   min-height: 300px;
@@ -150,8 +187,12 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: transform 0.3s ease;
 }
 
+.visitLinkText:hover {
+  transform: translateY(-5px);
+}
 .projectImageContainer {
   display: flex;
   justify-content: center;
@@ -180,6 +221,10 @@ h1 {
 }
 
 /* Skills Section Tab*/
+.skillsContainer {
+  animation: fadeInUp ease 0.3s forwards;
+}
+
 .skillCategory {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
@@ -210,6 +255,7 @@ h1 {
 /* Education Section Styles */
 .educationContainer {
   margin-top: var(--space-3xl);
+  animation: fadeInUp ease 0.3s forwards;
 }
 .educationSection {
   margin-top: var(--space-3xl);
@@ -275,6 +321,7 @@ h1 {
   flex-direction: column;
   gap: var(--space-lg);
   margin-top: var(--space-3xl);
+  animation: fadeInUp ease 0.3s forwards;
 }
 
 .connectContainer {
