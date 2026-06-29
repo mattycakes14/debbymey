@@ -16,7 +16,7 @@ export const experiences = [
     id: 1,
     projectName: "Liquid Rocket Structural Design",
     projectDescription:
-      "Designed bulkheads and internal spars for liquid rocket propulsion system. Developed Python-based bearing failure calculator integrating tensile, shear, and bolt shear models.",
+      "Developed bulkheads and internal spars in SolidWorks, incorporating torsional and axial load analysis to assure structural integrity during liquid rocket firing, and achieving FOS of 2+ while prioritizing DFMA and re-usability.",
     externalLink: "https://sarpuw.com/",
     icon: sarp,
     media: sarpVid,
