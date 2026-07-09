@@ -13,7 +13,7 @@ const ProjectSection = () => {
         if (data?.length) {
           setExperiences(
             data.map((exp, i) => ({
-              id: i,
+              id: i + 1,
               projectName: exp.projectName,
               projectDescription: exp.projectDescription,
               externalLink: exp.externalLink,
@@ -31,6 +31,7 @@ const ProjectSection = () => {
       {experiences.map((exp) => (
         <ProjectSectionTab
           key={exp.id}
+          id={exp.id}
           name={exp.projectName}
           desc={exp.projectDescription}
           link={exp.externalLink}
