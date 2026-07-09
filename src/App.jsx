@@ -1,16 +1,16 @@
 import "./App.css";
 import headshot from "./assets/headshot.jpg";
 import linkedIn from "./assets/linked.png";
-
 import ProjectSection from "./components/ProjectSection";
 import SkillsSection from "./components/SkillsSection";
 import EducationSection from "./components/EducationSection";
 import ConnectSection from "./components/ConnectSection";
-
+import ProjectDetail from "./pages/ProjectDetail";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import { client, urlFor } from "./sanityClient";
 
-function App() {
+function Home() {
   const [activeTab, setActiveTab] = useState("Experience");
   const [profile, setProfile] = useState(null);
 
@@ -40,7 +40,6 @@ function App() {
     : defaultSocials;
 
   const subNav = ["Experience", "Skills", "Education", "Connect"];
-
   const subNavContent = {
     Experience: <ProjectSection />,
     Skills: <SkillsSection />,
@@ -49,44 +48,43 @@ function App() {
   };
 
   return (
-    <>
-      <div className="mainContainer">
-        <img
-          className="headShotImage"
-          alt="Ameya headshot"
-          src={headshotSrc}
-        ></img>
-        <div className="introHeader">
-          <h1>{heading}</h1>
-        </div>
-        <div className="introDescription">
-          <p>{description}</p>
-        </div>
-        <div className="socialsContainer">
-          {socials.map((item) => (
-            <a key={item.id} href={item.link} target="_blank">
-              <img
-                className="externalSourceImage"
-                alt="externalSource"
-                src={item.img}
-              />
-            </a>
-          ))}
-        </div>
-        <div className="subNav">
-          {subNav.map((item) => (
-            <div
-              key={item}
-              className={`subNavTitles ${activeTab === item ? "activePill" : ""}`}
-              onClick={() => setActiveTab(item)}
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-        <div className="subTabContainer">{subNavContent[activeTab]}</div>
+    <div className="mainContainer">
+      <img className="headShotImage" alt="Ameya headshot" src={headshotSrc} />
+      <div className="introHeader">
+        <h1>{heading}</h1>
       </div>
-    </>
+      <div className="introDescription">
+        <p>{description}</p>
+      </div>
+      <div className="socialsContainer">
+        {socials.map((item) => (
+          <a key={item.id} href={item.link} target="_blank" rel="noreferrer">
+            <img className="externalSourceImage" alt="externalSource" src={item.img} />
+          </a>
+        ))}
+      </div>
+      <div className="subNav">
+        {subNav.map((item) => (
+          <div
+            key={item}
+            className={`subNavTitles ${activeTab === item ? "activePill" : ""}`}
+            onClick={() => setActiveTab(item)}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+      <div className="subTabContainer">{subNavContent[activeTab]}</div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/project/:id" element={<ProjectDetail />} />
+    </Routes>
   );
 }
 
