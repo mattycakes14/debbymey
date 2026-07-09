@@ -1,0 +1,66 @@
+import { useParams, Link } from "react-router-dom";
+import { experiences } from "../data/resume";
+import "../App.css";
+
+const ProjectDetail = () => {
+  const { id } = useParams();
+  const project = experiences.find((e) => e.id === Number(id));
+
+  if (!project) {
+    return (
+      <div className="mainContainer">
+        <p>Project not found.</p>
+        <Link to="/">← Back</Link>
+      </div>
+    );
+  }
+
+  const isVideo = project.media && /\.(mp4|mov|webm|ogg)$/i.test(project.media);
+
+  return (
+    <div className="mainContainer">
+      <Link to="/" className="backLink">← Back</Link>
+
+      <div className="detailHeader">
+        <img src={project.icon} alt="project icon" className="detailIcon" />
+        <h1 className="detailTitle">{project.projectName}</h1>
+      </div>
+
+      <p className="detailDesc">{project.projectDescription}</p>
+
+      {project.bullets?.length > 0 && (
+        <ul className="detailBullets">
+          {project.bullets.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
+        </ul>
+      )}
+
+      {project.media && (
+        <div className="detailMedia">
+          {isVideo ? (
+            <video className="detailVideo" autoPlay muted loop playsInline>
+              <source src={project.media} type="video/mp4" />
+            </video>
+          ) : (
+            <img src={project.media} alt="project media" className="detailPhoto" />
+          )}
+        </div>
+      )}
+
+      {project.extraMedia?.length > 0 && (
+        <div className="detailGallery">
+          {project.extraMedia.map((src, i) => (
+            <img key={i} src={src} alt={`extra media ${i + 1}`} className="detailGalleryImg" />
+          ))}
+        </div>
+      )}
+
+      <a href={project.externalLink} target="_blank" rel="noreferrer" className="projectLink">
+        <div className="visitLinkText" style={{ marginTop: "2rem" }}>Visit site</div>
+      </a>
+    </div>
+  );
+};
+
+export default ProjectDetail;
